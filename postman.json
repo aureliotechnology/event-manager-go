@@ -1,0 +1,145 @@
+{
+    "info": {
+        "name": "Event Manager API",
+        "_postman_id": "e6a8c6d2-1234-5678-9abc-def012345678",
+        "description": "Coleção de endpoints da API de Eventos",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/health",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "health"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create Event",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Exemplo Evento\",\n  \"description\": \"Descrição do evento\",\n  \"address\": \"Endereço do evento\",\n  \"mapUrl\": \"http://maps.example.com/event\",\n  \"date\": \"2025-05-01T10:00:00Z\",\n  \"modality\": \"presencial\",\n  \"cancellationPolicy\": \"Política de cancelamento\",\n  \"participantEditionPolicy\": \"Política de edição\",\n  \"ticketType\": \"VIP\",\n  \"ticketPrice\": 150.00,\n  \"ticketQuantity\": 100\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/events",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "events"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get All Events",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/events",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "events"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Single Event",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/events/{{id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "events",
+                        "{{id}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Event",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Evento Atualizado\",\n  \"description\": \"Descrição atualizada do evento\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/events/{{id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "events",
+                        "{{id}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Event",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/events/{{id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "events",
+                        "{{id}}"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}

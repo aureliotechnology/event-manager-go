@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  event-manager:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - mongodb
+    environment:
+      # Se desejar, configure a string de conexão via variável
+      MONGO_URI: "mongodb://mongodb:27017/eventdb"
+      MONGO_DB: "eventdb"
+      MONGO_COLLECTION: "events"
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_DATABASE: eventdb
+    restart: always
