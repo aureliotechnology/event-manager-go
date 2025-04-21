@@ -37,7 +37,7 @@ event-manager-go/
 2. **Clone o repositório**:
 
 ```bash
-git clone <URL_do_repositório>
+git clone https://github.com/aureliotechnology/event-manager-go.git
 cd event-manager-go
 ```
 
@@ -45,8 +45,7 @@ cd event-manager-go
 Crie um arquivo `.env` na raiz do projeto com as variáveis de ambiente necessárias, por exemplo:
 
 ```env
-PORT=8080
-MONGO_URI=mongodb://localhost:27017
+MONGO_URI=mongodb://mongodb:27018
 MONGO_DB=eventdb
 MONGO_COLLECTION=events
 ```
@@ -56,7 +55,8 @@ MONGO_COLLECTION=events
 Para rodar o projeto, execute o comando:
 
 ```bash
-go run cmd/main.go
+make build
+make docker-up
 ```
 
 O servidor será iniciado na porta definida (default: 8080).
@@ -109,7 +109,7 @@ O servidor será iniciado na porta definida (default: 8080).
 Para executar os testes unitários do projeto, utilize o comando:
 
 ```bash
-go test ./... -v
+make docker-test
 ```
 
 Isso executará os testes de DTO, entidade, handlers e repositório.

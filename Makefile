@@ -29,3 +29,7 @@ clean:
 test:
 	@echo "Executando testes..."
 	go test ./...
+
+docker-test:
+	@echo "Executando testes no container..."
+	docker-compose run --rm app go test ./...
